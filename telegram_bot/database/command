@@ -1,0 +1,14 @@
+# Инициализация alembic
+alembic init  -t async tg_db_migrations
+
+# Создание миграции
+python -m alembic revision --autogenerate -m "Database creation"
+
+# Выполнение миграции до последнего обновления
+python -m alembic upgrade head
+
+# Выполнение отката миграции на одну назад
+python -m alembic downgrade -1
+
+# История миграций
+python -m alembic history
